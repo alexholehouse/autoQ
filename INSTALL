@@ -1,0 +1,17 @@
+## autoQ
+##
+## EARLY ALPHA - NOT YET READY FOR PUBLIC USE
+##
+## March 2014
+
+
+## Overview
+
+Right now this is still very much being developed and is currently specific for
+
+1) me
+2) GROMACS jobs
+3) The CHPC supercomputer cluster at Washington University in St. Louis
+
+The next step is to generalize this...
+

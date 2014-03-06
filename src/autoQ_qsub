@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+## autoQ submission function
+
+autoQ_qsub(){
+
+    if [ "$#" -ne 1 ]; then
+	echo "ERROR: "
+	return
+    fi
+    
+    # need a better way of doing this...
+    source /home/alex/bin/autoQ/autoQ_functions.sh
+
+    if [ $1 == "--help" ] || [ $1 == "-h" ]
+	then
+	echo ""
+	echo ""
+	echo "##################################################"
+	echo "#                                                #"
+	echo "#             autoQ version ${AUTOQ_V}           #"
+	echo "#                                                #"
+	echo "##################################################"
+	echo $(date)
+	echo ""
+	echo "autoQ_qsub submits a job into the standard queing framework via that autoQ framework"
+	echo "You MUST submit jobs FROM the directory where input/output is written"
+	echo ""
+	echo "This means that assuming the autoQ_daemon is running as a cron job and there is a restart"
+	echo "script with the name [${RESTART_SCRIPT}] within the directory, you job will restart until"
+	echo "completion using that script"
+    else	
+
+	echo -n "Job launching via autoQ..."
+	launch_job $1    
+	echo "[DONE]"
+    fi
+    
+}
